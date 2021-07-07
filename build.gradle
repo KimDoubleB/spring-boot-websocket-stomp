@@ -6,28 +6,38 @@ plugins {
 
 group = 'com.socket'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+allprojects {
+
+	apply plugin: 'java'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'org.springframework.boot'
+
+	sourceCompatibility = '11'
+
+
+	repositories {
+		mavenCentral()
 	}
-}
 
-repositories {
-	mavenCentral()
-}
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
 
-dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-websocket'
-	implementation group: 'org.webjars', name: 'bootstrap', version: '4.4.1'
-	implementation group: 'org.webjars', name: 'jquery', version: '3.4.1'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
+	dependencies {
+		implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+		implementation 'org.springframework.boot:spring-boot-starter-websocket'
+		implementation group: 'org.webjars', name: 'bootstrap', version: '4.4.1'
+		implementation group: 'org.webjars', name: 'jquery', version: '3.4.1'
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	}
 
-test {
-	useJUnitPlatform()
+	test {
+		useJUnitPlatform()
+	}
+
 }

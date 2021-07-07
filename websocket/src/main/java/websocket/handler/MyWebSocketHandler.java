@@ -1,4 +1,4 @@
-package com.socket.chat.handler;
+package websocket.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.socket.CloseStatus;

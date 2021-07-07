@@ -1,6 +1,6 @@
-package com.socket.chat.config;
+package websocket.config;
 
-import com.socket.chat.handler.MyWebSocketHandler;
+import websocket.handler.MyWebSocketHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
